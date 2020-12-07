@@ -10,10 +10,22 @@ services:
       - '80:80'
     depends_on:
       - aspapp
+      - aspapp1
     restart: always
 
   aspapp:
     build: ./ao-docker-tech-test
+    container_name: aspapp
+    hostname: aspapp
     ports:
       - '80'
     restart: always
+
+  aspapp1:
+    build: ./ao-docker-tech-test1
+    container_name: aspapp1
+    hostname: aspapp1
+    ports:
+      - '80'
+    restart: always
+
